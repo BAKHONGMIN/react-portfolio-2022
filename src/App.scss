@@ -1,0 +1,51 @@
+body{
+    background-color: #333333;
+}
+.d-none{
+    display: none;
+}
+.d-block{
+    display: block;
+}
+.d-flex{
+    display: flex;
+    justify-content: space-around;
+}
+.typing{
+    font-family: "Notosans-m";
+    font-size:16px;
+    color: #333333;
+    align-items:center;
+}
+.submenuimg{
+    min-height: 15px;
+    min-width: 15px;
+    height: 15px;
+    width: 15px;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    // opacity: 0.5;
+    
+}
+.submenutext:hover{
+    font-weight: bold;
+}
+.submenutext{
+    font-size: 13px;
+    color: #5a5a5a;
+    margin-left: 35px;
+    font-family: 'Notosans-kr-m';
+}
+.submenuli{
+    width: 400px;
+    height: 40px;
+    text-align: left;
+    line-height: 40px;
+    position: relative;
+}
+@keyframes movingPara {
+    from { height: 40px; }
+    to { height: 290px; }
+}

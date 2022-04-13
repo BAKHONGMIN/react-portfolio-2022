@@ -1,0 +1,110 @@
+@font-face {
+    /* 사용할 폰트의 이름 */
+    font-family: "Notosans-r";
+    font-display: fallback;
+  
+    /* 
+    src: 사용할 폰트의 위치 및 형식 
+       Safari, Android, iOS => ttf
+       Modern Browsers => woff
+       IE6-IE8 => eot
+    */
+    src: url("./Notosans/NotoSans-Regular.ttf") format("truetype"), url("./Notosans/NotoSans-Regular.woff")
+        format("woff"), url("./Notosans/NotoSans-Regular.eot?iefix") format("embedded-opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 400;
+    font-style: normal;
+  }
+@font-face {
+    /* 사용할 폰트의 이름 */
+    font-family: "Notosans-m";
+    font-display: fallback;
+  
+    /* 
+    src: 사용할 폰트의 위치 및 형식 
+       Safari, Android, iOS => ttf
+       Modern Browsers => woff
+       IE6-IE8 => eot
+    */
+    src: url("./Notosans/NotoSans-Medium.ttf") format("truetype"), url("./Notosans/NotoSans-Medium.woff")
+        format("woff"), url("./Notosans/NotoSans-Medium.eot?iefix") format("embedded-opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    /* 사용할 폰트의 이름 */
+    font-family: "Notosans-b";
+    font-display: fallback;
+  
+    /* 
+    src: 사용할 폰트의 위치 및 형식 
+       Safari, Android, iOS => ttf
+       Modern Browsers => woff
+       IE6-IE8 => eot
+    */
+    src: url("./Notosans/NotoSans-SemiBold.ttf") format("truetype"), url("./Notosans/NotoSans-SemiBold.woff")
+        format("woff"), url("./Notosans/NotoSans-SemiBold.eot?iefix") format("embedded-opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  /* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+  @font-face {
+    /* 사용할 폰트의 이름 */
+    font-family: "Notosans-kr-r";
+    font-display: fallback;
+  
+    /* 
+    src: 사용할 폰트의 위치 및 형식 
+       Safari, Android, iOS => ttf
+       Modern Browsers => woff
+       IE6-IE8 => eot
+    */
+    src: url("./Notosans-kr/NotoSansKR-Regular.ttf") format("truetype"), url("./Notosans-kr/NotoSansKR-Regular.woff")
+        format("woff"), url("./Notosans-kr/NotoSansKR-Regular.eot?iefix") format("embedded-opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    /* 사용할 폰트의 이름 */
+    font-family: "Notosans-kr-m";
+    font-display: fallback;
+  
+    /* 
+    src: 사용할 폰트의 위치 및 형식 
+       Safari, Android, iOS => ttf
+       Modern Browsers => woff
+       IE6-IE8 => eot
+    */
+    src: url("./Notosans-kr/NotoSansKR-Medium.ttf") format("truetype"), url("./Notosans-kr/NotoSansKR-Medium.woff")
+        format("woff"), url("./Notosans-kr/NotoSansKR-Regular.eot?iefix") format("embedded-opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    /* 사용할 폰트의 이름 */
+    font-family: "Notosans-kr-b";
+    font-display: fallback;
+  
+    /* 
+    src: 사용할 폰트의 위치 및 형식 
+       Safari, Android, iOS => ttf
+       Modern Browsers => woff
+       IE6-IE8 => eot
+    */
+    src: url("./Notosans-kr/NotoSansKR-Bold.ttf") format("truetype"), url("./Notosans-kr/NotoSansKR-Bold.woff")
+        format("woff"), url("./Notosans-kr/NotoSansKR-Bold.eot?iefix") format("embedded-opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 700;
+    font-style: normal;
+  }

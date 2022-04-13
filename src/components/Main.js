@@ -1,38 +1,110 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTheme } from '../context/themeProvider';
 import AppLayout from './AppLayout';
+import Typing from './Typing';
+import Slidetext from './Slidetext';
+import Logo from '../img/logo.svg';
+import Searchimg from '../img/search.svg';
+import Mic  from '../img/mic.svg';
+import '../App.scss';
+import { useTheme } from '../context/themeProvider';
 
 const Main = () => {
+  const names = ['현명한 박홍민', '똑똑한 박홍민', '한결같은 박홍민', '진실된 박홍민', '변하지 않는 박홍민', '카멜레온 같은 박홍민'] ;
+  const nameList = names.map((name) => (<Slidetext name={name}/>));
   const ThemeMode = useTheme();
-  const CurrentMode = ThemeMode[0] === 'light' ? '🌝' : '🌚';
-
   return (
     <AppLayout>
-      <h2> Welcome to {''}
-        <a
-          href="https://github.com/gparkkii/react_darkmode"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Darkmode!
-        </a> 
-        <br/>
-        <ColoredText>Current mode is {CurrentMode}</ColoredText>
-      </h2>
-      <a
-        href="https://github.com/gparkkii"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        All rights reserved by Ji Yeon Park
-      </a>
+      <Bodywrap theme={ThemeMode[0]}>
+        <Bak theme={ThemeMode[0]}><img src={Logo} alt="logo" /></Bak>
+        <Search>
+          <Iconsearch theme={ThemeMode[0]}><img src={Searchimg} alt="search" width="20px"/></Iconsearch>
+          <Input theme={ThemeMode[0]}>
+            <Searchmenu >
+              <li><Typing /></li>
+            </Searchmenu>
+            <Submenu>
+              <ul> {nameList} </ul>
+            </Submenu> 
+          </Input>
+          <Iconmic><img src={Mic} alt="mic" width="25px" /></Iconmic>
+        </Search>
+      </Bodywrap>
     </AppLayout>
   )
 }
 
 export default Main;
 
-const ColoredText = styled.span`
-  color: #E6B74A;
+
+const Bodywrap = styled.div`
+
+`
+
+const Bak = styled.div`
+  & img {
+    width: 150px;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
+  }
+`
+const Search = styled.div`
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 460px;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 auto;
+  
+`
+const Input = styled.div`
+  width: 100%;
+  border-radius: 15px;
+  border: none;
+  padding: 6px 60px;
+  box-shadow:0  0 2px rgb(193, 193, 193);
+  text-align: left;
+  overflow: hidden;
+  height: 40px;
+  -webkit-animation-name: movingPara;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 6s;
+  animation-name: movingPara;
+  animation-duration: 2s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  background:  ${props => props.theme === 'light' ? '#FFFFFF' : '#303134'};
+`
+const Iconsearch = styled.div`
+  position: absolute;
+  left: 20px;
+  top: 45%;
+  height: 20px;
+  line-height: 20px;
+  margin-top:2px;
+  & img{
+    filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
+  }
+`
+const Searchmenu = styled.div`
+  margin-top:5px;
+  padding-bottom:10px;
+  height:20px;
+  line-height:20px;
+`
+const Submenu = styled.div`
+padding: 10px 0px;
+margin-left: -35px;
+`
+const Iconmic = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 40%;
+  cursor: pointer;
 `
