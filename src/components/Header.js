@@ -13,16 +13,19 @@ import Banner from '../img/banner.svg';
 import '../App.scss';
 import { useTheme } from '../context/themeProvider';
 
-const Header = () => {
+const Header = (props) => {
 
   let [site,sitech] = useState(['https://pf.kakao.com/chat', 'https://github.com/BAKHONGMIN', 'mailto:ghdals2655@naver.com', 'tel:010-2162-2664']);
   const [isOpen, setMenu] = useState(false);  // 메뉴의 초기값을 false로 설정
   const toggleMenu = () => {
-    setMenu(isOpen => !isOpen); // on,off 개념 boolean
+        setMenu(isOpen => !isOpen); // on,off 개념 boolean
   }
   let [menutext,menutextch] = useState(['About_me', 'Portfoilo', 'Interview', 'Contact_me','Design','Banner']);
   const ThemeMode = useTheme();
-  
+
+
+
+
   return (
     <nav>
       <StyledHeader>
@@ -31,13 +34,13 @@ const Header = () => {
             <Menutext><a href={site[1]} target="_blank">Git hub</a></Menutext>
             <Menutext><a href={site[2]}>Email</a></Menutext>
             <Menutext><a href={site[3]}>Phone</a></Menutext>
-            <Menutext theme={ThemeMode[0]}><Link to="/"><img src={Menu} alt="menu" onClick={()=>toggleMenu()} /></Link></Menutext>
+            <Menutext theme={ThemeMode[0]}><img src={Menu} alt="menu" onClick={()=>toggleMenu()} /></Menutext>
         </RightMenu>
       </StyledHeader>
-      <Submenu className={isOpen ? "menuwrap" : "d-none"}>
-        <Submenuwrap>
+      <Submenu className={isOpen ? "menuwrap" : "d-none"} theme={ThemeMode[0]}>
+        <Submenuwrap >
           <Submenuicon>
-            <Menuimg><img src={Blogo} alt="blogo" width="20px"/><br/><span>{menutext[0]}</span></Menuimg>
+            <Menuimg><Link to="/About"><button><img src={Blogo} alt="blogo" width="20px"/><br/><span>{menutext[0]}</span></button></Link></Menuimg>
             <Menuimg><img src={Portfolio} alt="portfoilo" width="30px" /><br/><span>{menutext[1]}</span></Menuimg>
             <Menuimg><img src={Interview} alt="interview" width="30px" /><br/><span>{menutext[2]}</span></Menuimg>
           </Submenuicon>
@@ -87,13 +90,13 @@ const Submenu = styled.div`
   top: 10%;
   right: 20px;
   background-color: #202124;
+  background-color:  ${props => props.theme === 'light' ? '#202124' : '#303134'};
   width: 300px;
   height: 200px;
   border-radius: 20px;
 `
 const Submenuwrap = styled.div`
   margin:10px 5px;
-
 `
 
 

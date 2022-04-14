@@ -6,6 +6,7 @@ import Slidetext from './Slidetext';
 import Logo from '../img/logo.svg';
 import Searchimg from '../img/search.svg';
 import Mic  from '../img/mic.svg';
+import Key  from '../img/keyboard.svg';
 import '../App.scss';
 import { useTheme } from '../context/themeProvider';
 
@@ -27,6 +28,7 @@ const Main = () => {
               <ul> {nameList} </ul>
             </Submenu> 
           </Input>
+          <Iconkey theme={ThemeMode[0]}><img src={Key} alt="key" width="20px" /></Iconkey>
           <Iconmic><img src={Mic} alt="mic" width="25px" /></Iconmic>
         </Search>
       </Bodywrap>
@@ -38,7 +40,8 @@ export default Main;
 
 
 const Bodywrap = styled.div`
-
+  width:100px
+  background-color: #333333;
 `
 
 const Bak = styled.div`
@@ -60,8 +63,8 @@ const Search = styled.div`
   width: 460px;
   height: 20px;
   line-height: 20px;
-  margin: 0 auto;
-  
+  margin: 0;
+  z-index:1;
 `
 const Input = styled.div`
   width: 100%;
@@ -77,6 +80,7 @@ const Input = styled.div`
   -webkit-animation-delay: 6s;
   animation-name: movingPara;
   animation-duration: 2s;
+  z-index:1;
   animation-delay: 6s;
   animation-fill-mode: forwards;
   background:  ${props => props.theme === 'light' ? '#FFFFFF' : '#303134'};
@@ -107,4 +111,13 @@ const Iconmic = styled.div`
   right: 20px;
   top: 40%;
   cursor: pointer;
+`
+const Iconkey = styled.div`
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  cursor: pointer;
+  & img{
+    filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
+  }
 `

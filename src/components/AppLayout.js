@@ -22,5 +22,5 @@ export default AppLayout;
 
 const WrapContainer = styled.main`
   min-height: 100%;
-  position: relative;
+  min-width:100%;
 `;
