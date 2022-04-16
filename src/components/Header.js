@@ -10,6 +10,7 @@ import Interview from '../img/pre-interview.svg';
 import Contact from '../img/contact_me.svg';
 import Design from '../img/design.svg';
 import Banner from '../img/banner.svg';
+import Home from '../img/home.svg';
 import '../App.scss';
 import { useTheme } from '../context/themeProvider';
 
@@ -30,18 +31,19 @@ const Header = (props) => {
     <nav>
       <StyledHeader>
         <RightMenu>
+            <Menutext theme={ThemeMode[0]}><Link to="/"><img src={Home} alt="home" height="24px" /></Link></Menutext>
             <Menutext><a href={site[0]} target="_blank">Kakaotalk</a></Menutext>
             <Menutext><a href={site[1]} target="_blank">Git hub</a></Menutext>
             <Menutext><a href={site[2]}>Email</a></Menutext>
             <Menutext><a href={site[3]}>Phone</a></Menutext>
-            <Menutext theme={ThemeMode[0]}><img src={Menu} alt="menu" onClick={()=>toggleMenu()} /></Menutext>
+            <Menutext theme={ThemeMode[0]}><a><img src={Menu} alt="menu"  onClick={()=>toggleMenu()} /></a></Menutext>
         </RightMenu>
       </StyledHeader>
       <Submenu className={isOpen ? "menuwrap" : "d-none"} theme={ThemeMode[0]}>
         <Submenuwrap >
           <Submenuicon>
             <Menuimg><Link to="/About"><button><img src={Blogo} alt="blogo" width="20px"/><br/><span>{menutext[0]}</span></button></Link></Menuimg>
-            <Menuimg><img src={Portfolio} alt="portfoilo" width="30px" /><br/><span>{menutext[1]}</span></Menuimg>
+            <Menuimg><Link to="/Portfolio"><button><img src={Portfolio} alt="portfoilo" width="30px" /><br/><span>{menutext[1]}</span></button></Link></Menuimg>
             <Menuimg><img src={Interview} alt="interview" width="30px" /><br/><span>{menutext[2]}</span></Menuimg>
           </Submenuicon>
           <Submenuicon>
@@ -64,8 +66,8 @@ const StyledHeader = styled.ul`
   font-family: "Notosans-m";
 `
 
-const RightMenu = styled.li`
-  width: 300px;
+const RightMenu = styled.ul`
+  width: 350px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,6 +77,7 @@ const RightMenu = styled.li`
 `
 const Menutext = styled.li`
   font-family: "Notosans-m";
+  align-items: center;
   & a {
   display: flex;
   align-items: center;
@@ -82,6 +85,7 @@ const Menutext = styled.li`
   }
   & img{
     filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
+    cursor:pointer;
   }
 `
 const Submenu = styled.div`
@@ -89,11 +93,11 @@ const Submenu = styled.div`
   position: fixed;
   top: 10%;
   right: 20px;
-  background-color: #202124;
   background-color:  ${props => props.theme === 'light' ? '#202124' : '#303134'};
   width: 300px;
   height: 200px;
   border-radius: 20px;
+  z-index:9999999999;
 `
 const Submenuwrap = styled.div`
   margin:10px 5px;

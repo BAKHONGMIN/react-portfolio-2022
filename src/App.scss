@@ -42,8 +42,18 @@
     text-align: left;
     line-height: 40px;
     position: relative;
+
 }
 @keyframes movingPara {
     from { height: 40px; }
     to { height: 290px; }
 }
+@media screen and (max-width: 900px){
+    .mainimg{
+       display: none;
+    }
+}
+
+
+
+  
