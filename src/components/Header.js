@@ -14,6 +14,8 @@ import Home from '../img/home.svg';
 import '../App.scss';
 import { useTheme } from '../context/themeProvider';
 
+import Modal from './Modal'
+
 const Header = (props) => {
 
   let [site,sitech] = useState(['https://pf.kakao.com/chat', 'https://github.com/BAKHONGMIN', 'mailto:ghdals2655@naver.com', 'tel:010-2162-2664']);
@@ -23,12 +25,17 @@ const Header = (props) => {
   }
   let [menutext,menutextch] = useState(['About_me', 'Portfoilo', 'Interview', 'Contact_me','Design','Banner']);
   const ThemeMode = useTheme();
+  
+  const [modalOpen, setModalOpen] = useState(false)
+  const modalClose = () => {
+      setModalOpen(!modalOpen)
 
+  }
 
 
 
   return (
-    <nav>
+    <nav className="nav">
       <StyledHeader>
         <RightMenu>
             <Menutext theme={ThemeMode[0]}><Link to="/"><img src={Home} alt="home" height="24px" /></Link></Menutext>
@@ -47,12 +54,13 @@ const Header = (props) => {
             <Menuimg><Link to="/Interview"><button><img src={Interview} alt="interview" width="30px" /><br/><span>{menutext[2]}</span></button></Link></Menuimg>
           </Submenuicon>
           <Submenuicon>
-            <Menuimg><Link to="/Contact"><button><img src={Contact} alt="contact" width="30px" /><br/><span>{menutext[3]}</span></button></Link></Menuimg>
+            <Menuimg><button onClick={modalClose}><img src={Contact} alt="contact" width="30px" /><br/><span>{menutext[3]}</span></button></Menuimg>
             <Menuimg><img src={Design} alt="design" width="25px" /><br/><span>{menutext[4]}</span></Menuimg>
             <Menuimg><img src={Banner} alt="banner" width="30px" /><br/><span>{menutext[5]}</span></Menuimg>
           </Submenuicon>
         </Submenuwrap>
       </Submenu>
+      { modalOpen && <Modal modalClose={modalClose}></Modal>}
     </nav>
   )
 }
@@ -64,6 +72,7 @@ const StyledHeader = styled.ul`
   width: 100%;
   height: 50px;
   font-family: "Notosans-m";
+  z-index:99999999;
 `
 
 const RightMenu = styled.ul`
@@ -97,10 +106,11 @@ const Submenu = styled.div`
   width: 300px;
   height: 200px;
   border-radius: 20px;
-  z-index:9999999999;
+  z-index:10;
 `
 const Submenuwrap = styled.div`
   margin:10px 5px;
+  z-index:999;
 `
 
 

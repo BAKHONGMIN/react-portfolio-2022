@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import styled from 'styled-components';
-import ComLayout from './ComLayout';
+// import ComLayout from './ComLayout';
 import { useTheme } from '../context/themeProvider';
 import '../fonts/font.css';
 import { useForm } from 'react-hook-form';
@@ -29,61 +29,60 @@ const Contact = () =>{
  
 
     return (
-        <ComLayout>
-          <Layout>
+          <Layout theme={ThemeMode[0]}>
           <form ref={form} onSubmit={sendEmail} autoComplete="off">
    
-              {/* <label>Company</label>
-              <input type="text" name="user_company" placeholder="회사명을 입력해주세요" /> */}
             <div className="field">
               <label htmlFor="user_company">Company</label>
-              <input type="text" name="user_company"  {...register("Company", {max: 20, min: 0, maxLength: 20})} />
+              <input type="text" name="user_company"  />
             </div>
             <div className="field">
               <label htmlFor="user_name">Name</label>
-              <input type="text" name="user_name" {...register("Name", {max: 10, min: 0, maxLength: 9})}/>
+              <input type="text" name="user_name" />
             </div>
             <div className="field">
               <label htmlFor="user_email">Email</label>
-              <input type="text" name="user_email"  {...register("Email", {max: 40, min: 2, maxLength: 39, pattern: /abcde@abcd.com/i})}/>
+              <input type="text" name="user_email" />
             </div>
             <div className="field">
               <label htmlFor="user_number">Number</label>
-              <input type="number" name="user_number" placeholder="'-'없이 입력해주세요." {...register("Number", {max: 20, min: 2, maxLength: 20, pattern: /01000000000/i})} />
+              <input type="number" name="user_number" placeholder="'-'없이 입력해주세요." />
             </div>
             <div className="field fieldmessage">
-              <label htmlFor="message">message</label>
-              <textarea type="text" name="message" form='message' cols="40" rows="10" autoFocus required wrap="hard" placeholder='메세지를 남겨주세요' {...register("Message", {max: 100, min: 0, maxLength: 100})}></textarea>
+              <label htmlFor="message">Message</label>
+              <textarea type="text" name="message" cols="40" rows="10" placeholder='메세지를 남겨주세요' />
             </div>
-            <input type="submit" className="button" value="Send Email" />
+            <input onClick={() => alert('메세지가 전송되었습니다.')} type="submit" className="button" value="Send Email" />
+            
           </form>
+         
           </Layout>
-        </ComLayout>
         );
     }
 export default Contact;
 
 const Layout  = styled.div`
-    width:290px;
-    height:700px;
+    width:100%;
+    height:100%;
     padding:20px;
     position: relative;
     & .field {
       margin-bottom: 10px;
+      
     }
 
     & .field label {
       display: block;
-      font-size: 16px;
+      font-size: 15px;
       margin-bottom:5px;
       font-weight:bold;
-      color: #777;
+      color:  ${props => props.theme === 'light' ? '#333' : '#cccccc'};
     }
 
     & .field input {
       display: block;
-      width: 250px;
-      line-height: 1.5;
+      width: 100%;
+      line-height: 20px;
       font-size: 14px;
       border:1px solid #333;
     }
@@ -92,23 +91,25 @@ const Layout  = styled.div`
       display: block;
       padding: 6px 30px;
       font-size: 14px;
-      background-color: #4460AA;
+      background-color: #333;
       color: #fff;
       border: none
       text-align:center;
       position: absolute;
        left: 50%;
        transform: translateX(-50%);
+       cursor: pointer;
     }
     & .fieldmessage{
       & textarea {
         height: 100px;
-        width: 250px;
+        width: 100%;
         line-height: 1.5;
         font-size: 14px;
         border:1px solid #333;
       }
     }
+  
 
 `
 

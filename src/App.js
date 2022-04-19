@@ -7,10 +7,10 @@ import Contact from './components/Contact.js';
 import { ThemeProvider } from './context/themeProvider';
 import { GlobalStyle } from './theme/GlobalStyles';
 import './App.scss';
+
 // import styled from 'styled-components';
 
 function App(props) {
-
 
 
   return (
