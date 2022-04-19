@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import AppLayout from './AppLayout';
 import Typing from './Typing';
-import Slidetext from './Slidetext';
+// import Slidetext from './Slidetext';
+import Submenuimg from '../img/submenuimg.svg';
 import Logo from '../img/logo.svg';
 import Searchimg from '../img/search.svg';
 import Mic  from '../img/mic.svg';
@@ -12,7 +13,7 @@ import { useTheme } from '../context/themeProvider';
 
 const Main = () => {
   const names = ['현명한 박홍민', '똑똑한 박홍민', '한결같은 박홍민', '진실된 박홍민', '변하지 않는 박홍민', '카멜레온 같은 박홍민'] ;
-  const nameList = names.map((name) => (<Slidetext name={name}/>));
+  // const nameList = names.map((index) => (<Slidetext name={index}/>));
   const ThemeMode = useTheme();
   return (
     <AppLayout>
@@ -25,7 +26,12 @@ const Main = () => {
               <li><Typing /></li>
             </Searchmenu>
             <Submenu>
-              <ul> {nameList} </ul>
+              <Div theme={ThemeMode[0]}><li className='submenuli'><img src={Submenuimg} alt="submenu" className="submenuimg" /><a href="/" className="submenutext">{names[0]}</a></li></Div> 
+              <Div theme={ThemeMode[0]}><li className='submenuli'><img src={Submenuimg} alt="submenu" className="submenuimg" /><a href="/" className="submenutext">{names[1]}</a></li></Div> 
+              <Div theme={ThemeMode[0]}><li className='submenuli'><img src={Submenuimg} alt="submenu" className="submenuimg" /><a href="/" className="submenutext">{names[2]}</a></li></Div> 
+              <Div theme={ThemeMode[0]}><li className='submenuli'><img src={Submenuimg} alt="submenu" className="submenuimg" /><a href="/" className="submenutext">{names[3]}</a></li></Div> 
+              <Div theme={ThemeMode[0]}><li className='submenuli'><img src={Submenuimg} alt="submenu" className="submenuimg" /><a href="/" className="submenutext">{names[4]}</a></li></Div>
+              <Div theme={ThemeMode[0]}><li className='submenuli'><img src={Submenuimg} alt="submenu" className="submenuimg" /><a href="/" className="submenutext">{names[5]}</a></li></Div>  
             </Submenu> 
           </Input>
           <Iconkey theme={ThemeMode[0]}><img src={Key} alt="key" width="20px" /></Iconkey>
@@ -102,9 +108,17 @@ const Searchmenu = styled.div`
   height:20px;
   line-height:20px;
 `
+const Div = styled.ul`
+  & img{
+    filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
+  }
+  & a{
+    color :  ${props => props.theme === 'light' ? '#5a5a5a' : '#b2afaf'};
+  }
+`
 const Submenu = styled.div`
-padding: 10px 0px;
-margin-left: -35px;
+  padding: 10px 0px;
+  margin-left: -35px;
 `
 const Iconmic = styled.div`
   position: absolute;

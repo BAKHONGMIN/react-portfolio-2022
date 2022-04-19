@@ -1,8 +1,9 @@
-import React, {useState, Suspense} from 'react';
+import React, {Suspense} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Main from './components/Main';
 import About from './components/About.js';
 import Portfolio from './components/Portfoilo.js';
+import Contact from './components/Contact.js';
 import { ThemeProvider } from './context/themeProvider';
 import { GlobalStyle } from './theme/GlobalStyles';
 import './App.scss';
@@ -21,6 +22,7 @@ function App(props) {
             <Route exact path="/" component={Main}/>
             <Route exact path="/About" component={About}/>
             <Route exact path="/Portfolio" component={Portfolio}/>
+            <Route exact path="/Contact" component={Contact}/>
           </Switch>
         </Suspense>
       </ThemeProvider>

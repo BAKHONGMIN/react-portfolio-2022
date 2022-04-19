@@ -44,10 +44,10 @@ const Header = (props) => {
           <Submenuicon>
             <Menuimg><Link to="/About"><button><img src={Blogo} alt="blogo" width="20px"/><br/><span>{menutext[0]}</span></button></Link></Menuimg>
             <Menuimg><Link to="/Portfolio"><button><img src={Portfolio} alt="portfoilo" width="30px" /><br/><span>{menutext[1]}</span></button></Link></Menuimg>
-            <Menuimg><img src={Interview} alt="interview" width="30px" /><br/><span>{menutext[2]}</span></Menuimg>
+            <Menuimg><Link to="/Interview"><button><img src={Interview} alt="interview" width="30px" /><br/><span>{menutext[2]}</span></button></Link></Menuimg>
           </Submenuicon>
           <Submenuicon>
-            <Menuimg><img src={Contact} alt="contact" width="30px" /><br/><span>{menutext[3]}</span></Menuimg>
+            <Menuimg><Link to="/Contact"><button><img src={Contact} alt="contact" width="30px" /><br/><span>{menutext[3]}</span></button></Link></Menuimg>
             <Menuimg><img src={Design} alt="design" width="25px" /><br/><span>{menutext[4]}</span></Menuimg>
             <Menuimg><img src={Banner} alt="banner" width="30px" /><br/><span>{menutext[5]}</span></Menuimg>
           </Submenuicon>

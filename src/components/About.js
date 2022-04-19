@@ -81,11 +81,10 @@ const About = () =>{
                     </Main>
                 </Content>
                 <Mainimg>
-                <div class="mainimg">
+                <div className="mainimg">
                     <img src={mainimg} alt='mainimg'/>
                 </div>
                 </Mainimg>
-  
             </Aboutmap>
         </ComLayout>
         );
@@ -100,7 +99,7 @@ const Aboutmap  = styled.div`
 `
 const Content  = styled.div`
     width:500px;
-    padding:10px;
+    padding:5px 10px;
     height:100%;
 `
 const Main  = styled.ul`
@@ -119,11 +118,10 @@ const Main  = styled.ul`
             line-height:25px;
             background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
             border:1px solid #000;
-            padding:0 0 3px 0;
+            padding:0;
             text-align: center;
             cursor: pointer;
             transition: 0.5s;
-            margin-bottom:10px;
             & a{
                 color:#000;
                 font-size:13px;
@@ -150,8 +148,8 @@ const Text  = styled.div`
     & ul{
         margin:10px 0;
         & h2{
-            font-size:17px;
-            padding-bottom:10px;
+            font-size:21px;
+            padding-bottom:0px;
             font-weight: bold;
         }
         & li {
@@ -189,7 +187,7 @@ const Mainimg  = styled.div`
     z-index: 10000;
     cursor: pointer;
     position:absolute;
-    bottom:10%;
+    bottom:5%;
     right:0%;
     -webkit-animation-name: mainimg;
     transition: 1s;
