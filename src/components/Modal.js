@@ -45,6 +45,7 @@ const Modalwrap = styled.ul`
     top: 0;
     left: 0;
     overflow: hidden;
+    z-index:9999999;
 
     & .modal{
         width: 500px;
@@ -54,7 +55,7 @@ const Modalwrap = styled.ul`
         left: 50%;
         top:50%;
         transform: translate(-50%, -50%);
-        z-index:99999999999999;
+        z-index:999999;
         border:2px solid #333;
         border-radius: 20px;
         & h2{

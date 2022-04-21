@@ -95,7 +95,7 @@ const Aboutmap  = styled.div`
     width:100%;
     height:100%;
     position: relative;
-    z-index:9999999;
+    z-index:999;
 `
 const Content  = styled.div`
     width:500px;
@@ -184,7 +184,7 @@ const Text  = styled.div`
 
 `
 const Mainimg  = styled.div`
-    z-index: 10000;
+    z-index: 10;
     cursor: pointer;
     position:absolute;
     bottom:5%;

@@ -11,6 +11,7 @@ import Contact from '../img/contact_me.svg';
 import Design from '../img/design.svg';
 import Banner from '../img/banner.svg';
 import Home from '../img/home.svg';
+import portfolio from '../img/portfolioimg.svg'
 import '../App.scss';
 import { useTheme } from '../context/themeProvider';
 
@@ -37,6 +38,9 @@ const Header = (props) => {
   return (
     <nav className="nav">
       <StyledHeader>
+        <Lefttext theme={ThemeMode[0]}>
+         <Link to="/"><img src={portfolio} alt="portfoili" height="15px" /></Link>
+        </Lefttext>
         <RightMenu>
             <Menutext theme={ThemeMode[0]}><Link to="/"><img src={Home} alt="home" height="24px" /></Link></Menutext>
             <Menutext><a href={site[0]} target="_blank">Kakaotalk</a></Menutext>
@@ -67,14 +71,23 @@ const Header = (props) => {
 
 export default Header;
 
-const StyledHeader = styled.ul`
+const StyledHeader = styled.div`
   align-items: center;
   width: 100%;
   height: 50px;
   font-family: "Notosans-m";
   z-index:99999999;
 `
-
+const Lefttext = styled.ul`
+  width: 350px;
+  display: flex;
+  align-items: center;
+  float: left;
+  margin: 10px 20px;
+  & img{
+    filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
+  }
+`
 const RightMenu = styled.ul`
   width: 350px;
   display: flex;
@@ -106,11 +119,11 @@ const Submenu = styled.div`
   width: 300px;
   height: 200px;
   border-radius: 20px;
-  z-index:10;
+  z-index:1000;
 `
 const Submenuwrap = styled.div`
   margin:10px 5px;
-  z-index:999;
+  z-index:10;
 `
 
 
