@@ -76,7 +76,7 @@ const Layout  = styled.div`
       font-size: 15px;
       margin-bottom:5px;
       font-weight:bold;
-      color:  ${props => props.theme === 'light' ? '#333' : '#cccccc'};
+      color:  ${({ theme }) => theme.textColor};
     }
 
     & .field input {

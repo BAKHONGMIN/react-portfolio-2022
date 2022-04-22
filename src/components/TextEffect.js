@@ -34,7 +34,7 @@ const Text  = styled.div`
     font-weight:bold;
     font-family: "Notosans-m", sans-serif;
     text-align:center;
-    color:#333;
+    ${({ theme }) => theme.textColor};
     letter-spacing:30px;
     transition:1s;
     -webkit-transition:1s;
@@ -51,7 +51,7 @@ const Text  = styled.div`
     position: absolute;
     height: 7px;
     width: 0px;
-    background:#ffd800;
+    background:${({ theme }) => theme.textColor};;
     transition:300ms;
     -webkit-transition:1s;
     -ms-transition:1s;

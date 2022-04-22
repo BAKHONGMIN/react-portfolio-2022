@@ -27,7 +27,8 @@ line-height:80px;
  & h2{
     font-family: "Notosans-m";
     font-size:30px;
-    color: ${props => props.theme === 'light' ? '#333333' : '#ffffff'};
+    color: ${({ theme }) => theme.textColor};
+
  }
 `
 

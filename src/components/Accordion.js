@@ -47,9 +47,10 @@ const Text = styled.div`
   & .accordion-title {
     font-weight: bold;
     cursor: pointer;
-    color: #666;
+    color: ${({ theme }) => theme.textColor};
     padding: 0.5em 1.5em;
-    border: solid 2px #333;
+    border: solid 2px;
+    border-color:${({ theme }) => theme.borderColor};
     border-radius: 1.5em;
     display: flex;
     justify-content: space-between;

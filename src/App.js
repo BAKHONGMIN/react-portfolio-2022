@@ -5,6 +5,7 @@ import About from './components/About.js';
 import Portfolio from './components/Portfoilo.js';
 // import Contact from './components/Contact.js';
 import Interview from './components/Interview';
+import Design from './components/Design';
 import { ThemeProvider } from './context/themeProvider';
 import { GlobalStyle } from './theme/GlobalStyles';
 import './App.scss';
@@ -24,6 +25,7 @@ function App(props) {
             <Route exact path="/About" component={About}/>
             <Route exact path="/Portfolio" component={Portfolio}/>
             <Route exact path="/Interview" component={Interview}/>
+            <Route exact path="/Design" component={Design}/>
             {/* <Route exact path="/Contact" component={Contact}/> */}
           </Switch>
         </Suspense>

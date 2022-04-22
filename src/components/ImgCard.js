@@ -136,7 +136,8 @@ export default Imgcard;
 const Border = styled.div`
   
   & .main-slide{
-    border:  ${props => props.theme === 'light' ? '2px solid #333333' : '2px solid #ffffff'};
+    border:  2px solid;
+    border-color:${({ theme }) => theme.borderColor};
   }
   & h2{
     margin-bottom:10px;

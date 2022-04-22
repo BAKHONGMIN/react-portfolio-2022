@@ -38,9 +38,9 @@ const Header = (props) => {
   return (
     <nav className="nav">
       <StyledHeader>
-        <Lefttext theme={ThemeMode[0]}>
+        {/* <Lefttext theme={ThemeMode[0]}>
          <Link to="/"><img src={portfolio} alt="portfoili" height="15px" /></Link>
-        </Lefttext>
+        </Lefttext> */}
         <RightMenu>
             <Menutext theme={ThemeMode[0]}><Link to="/"><img src={Home} alt="home" height="24px" /></Link></Menutext>
             <Menutext><a href={site[0]} target="_blank">Kakaotalk</a></Menutext>
@@ -59,7 +59,7 @@ const Header = (props) => {
           </Submenuicon>
           <Submenuicon>
             <Menuimg><button onClick={modalClose}><img src={Contact} alt="contact" width="30px" /><br/><span>{menutext[3]}</span></button></Menuimg>
-            <Menuimg><img src={Design} alt="design" width="25px" /><br/><span>{menutext[4]}</span></Menuimg>
+            <Menuimg><Link to="/Design"><button><img src={Design} alt="design" width="25px" /><br/><span>{menutext[4]}</span></button></Link></Menuimg>
             <Menuimg><img src={Banner} alt="banner" width="30px" /><br/><span>{menutext[5]}</span></Menuimg>
           </Submenuicon>
         </Submenuwrap>
@@ -78,16 +78,16 @@ const StyledHeader = styled.div`
   font-family: "Notosans-m";
   z-index:99999999;
 `
-const Lefttext = styled.ul`
-  width: 350px;
-  display: flex;
-  align-items: center;
-  float: left;
-  margin: 10px 20px;
-  & img{
-    filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
-  }
-`
+// const Lefttext = styled.ul`
+//   width: 350px;
+//   display: flex;
+//   align-items: center;
+//   float: left;
+//   margin: 10px 20px;
+//   & img{
+//     filter:  ${props => props.theme === 'light' ? 'invert(0)' : 'invert(1)'};
+//   }
+// `
 const RightMenu = styled.ul`
   width: 350px;
   display: flex;
