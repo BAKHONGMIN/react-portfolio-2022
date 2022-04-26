@@ -16,7 +16,7 @@ import '../App.scss';
 
 
 const About = () =>{
-    let [about_me,about_mech] = useState(['About_me', '박홍민', '1995.01.08','인천 부평구']);
+    let [about_me,about_mech] = useState(['About_me', '박홍민', '1995.01.08','인천 부평구','010.2162.2664']);
     let [education,educationch] = useState(['Education', '부천대학교 컴퓨터공학과 졸업', '그린컴퓨터아트학원 PWA프론트엔드 양성과정 수료']);
     let [experience,experiencech] = useState(['Experience', '신도기연(BOE) PLC프리랜서', '테스탑 기술영업']);
     let [certificate,certificatech] = useState(['Certificate', '웹디자인 기능사','GTQ 그래픽기술자격', 'Auto CAD2급','HSK 중국어 5급','1종보통 운전면허']);
@@ -39,6 +39,7 @@ const About = () =>{
                                     <a><h3>Name</h3><h4>{about_me[1]}</h4></a>
                                     <a><h3>Ages</h3><h4>{about_me[2]}</h4></a>
                                     <a><h3>Address</h3><h4>{about_me[3]}</h4></a>
+                                    <a><h3>H.P</h3><h4>{about_me[4]}</h4></a>
                                 </li>
                             </ul>
                             <ul>
@@ -96,6 +97,7 @@ const Aboutmap  = styled.div`
     height:100%;
     position: relative;
     z-index:999;
+    font-family: "Notosans-m", "Notosans-kr-m";
 `
 const Content  = styled.div`
     width:500px;

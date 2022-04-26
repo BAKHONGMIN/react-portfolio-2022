@@ -45,13 +45,13 @@ const Text = styled.div`
   }
   
   & .accordion-title {
-    font-weight: bold;
+    font-family: 'Notosans-kr-m';
     cursor: pointer;
     color: ${({ theme }) => theme.textColor};
     padding: 0.5em 1.5em;
-    border: solid 2px;
+    border: solid 1.5px;
     border-color:${({ theme }) => theme.borderColor};
-    border-radius: 1.5em;
+    border-radius: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;

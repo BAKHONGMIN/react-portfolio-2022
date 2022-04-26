@@ -5,7 +5,6 @@ import ComLayout from './ComLayout';
 // import Slider from "./Slider";
 // import { useTheme } from '../context/themeProvider';
 import '../fonts/font.css';
-import '../slide.scss';
 import sample1 from '../img/sample1.jpg';
 import sample2 from '../img/sample2.jpg';
 import sample3 from '../img/sample3.jpg';

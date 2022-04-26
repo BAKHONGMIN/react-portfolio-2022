@@ -15,31 +15,16 @@ const Interview = () =>{
  
 
     return (
-        <ComLayout>
-            <H1><Text/></H1>
+    <ComLayout>
+      <H1><Text/></H1>
     <Wrapper>
-      <Accordion title="Why is the sky blue?">
-        Sunlight reaches Earth's atmosphere and is scattered in all directions by
-        all the gases and particles in the air. Blue light is scattered more than
-        the other colors because it travels as shorter, smaller waves. This is why
-        we see a blue sky most of the time.
-      </Accordion>
-      <Accordion title="What's It Like Inside Jupiter?">
-        It's really hot inside Jupiter! No one knows exactly how hot, but
-        scientists think it could be about 43,000°F (24,000°C) near Jupiter's
-        center, or core.
-      </Accordion>
-      <Accordion title="What Is a Black Hole?">
-        A black hole is an area of such immense gravity that nothing -- not even
-        light -- can escape from it.
-      </Accordion>
-      <Accordion title="What Is a Black Hole?">
-        A black hole is an area of such immense gravity that nothing -- not even
-        light -- can escape from it.
-      </Accordion>
-
-      </Wrapper>
-            
+      <ul>
+      <Accordion title="자기소개 부탁드립니다." />
+      <Accordion title="이직을 하려는 이유는 무엇인가요?"/>
+      <Accordion title="나에 대한 강점이 무엇인가요?" />
+      <Accordion title="지원자의 약점 (단점)은 무엇입니까?" />
+      </ul>
+    </Wrapper>        
         </ComLayout>
         );
     }
@@ -51,7 +36,8 @@ const H1  = styled.div`
     position: relative;
     z-index:999;
 `
-const Wrapper  = styled.div`
-width: 600px;
-margin: 20px auto;
+const Wrapper  = styled.div`  
+    width: 600px;
+    margin: 20px auto;
+
 `

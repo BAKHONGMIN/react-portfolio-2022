@@ -48,6 +48,7 @@ export default Main;
 const Bodywrap = styled.div`
   width:100px
   background-color: #333333;
+  overflow: auto;
 `
 
 const Bak = styled.div`
@@ -119,6 +120,7 @@ const Div = styled.ul`
 const Submenu = styled.div`
   padding: 10px 0px;
   margin-left: -35px;
+  overflow: auto;
 `
 const Iconmic = styled.div`
   position: absolute;

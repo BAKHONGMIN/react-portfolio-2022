@@ -28,7 +28,6 @@ line-height:80px;
     font-family: "Notosans-m";
     font-size:30px;
     color: ${({ theme }) => theme.textColor};
-
  }
 `
 
