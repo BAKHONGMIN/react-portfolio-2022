@@ -59,8 +59,9 @@ const Header = (props) => {
           </Submenuicon>
           <Submenuicon>
             <Menuimg><button onClick={modalClose}><img src={Contact} alt="contact" width="30px" /><br/><span>{menutext[3]}</span></button></Menuimg>
-            <Menuimg><Link to="/Design"><button><img src={Design} alt="design" width="25px" /><br/><span>{menutext[4]}</span></button></Link></Menuimg>
-            <Menuimg><img src={Banner} alt="banner" width="30px" /><br/><span>{menutext[5]}</span></Menuimg>
+            {/* <Menuimg><Link to="/Design"><button><img src={Design} alt="design" width="25px" /><br/><span>{menutext[4]}</span></button></Link></Menuimg> */}
+            <Menuimg><Link to="/Design"><button><img src={Banner} alt="banner" width="30px" /><br/><span>{menutext[5]}</span></button></Link></Menuimg>
+            {/* <Menuimg><img src={Banner} alt="banner" width="30px" /><br/><span>{menutext[5]}</span></Menuimg> */}
           </Submenuicon>
         </Submenuwrap>
       </Submenu>
